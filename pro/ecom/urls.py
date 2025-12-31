@@ -7,12 +7,9 @@ urlpatterns = [
     path('style/',style,name='style'),
     path('show/',show,name='show'),
     path('showimg/',showimg,name='showimg'),
-
+    path('store/',store,name='store'),
+    path('storeget/',storeget,name='storeget'),
     path('storeimg/', storeimg,name='storeimg'),
     path('index/',index,name='index')
     
-    #
-    #path('store/',store,name='store'),
-    #path('storeget/',storeget,name='storeget'),
-  
 ]

@@ -27,6 +27,25 @@ def showimg(request):
     return render(request,'showimg.html',{'dataimg':dataimg}) #Dictionary
     
 
+def store(request):
+    if request.method == 'POST':
+        print("this is first line after post method ")
+        store_data = Student() #call to model.py Student class
+        store_data.email = request.POST['email']
+        store_data.name = request.POST['uname']
+        store_data.save()
+    return render(request,'store.html')
+
+
+def storeget(request):
+    if request.method == 'GET':
+        # store_data = Student()
+        email = request.GET.get('email')
+        name =  request.GET.get('uname')
+        # store_data.save()
+        print(name,email)
+    return render(request,'storeget.html')
+
 def storeimg(request):
     if request.method == 'POST' and request.FILES:
         store_image = Img()
@@ -38,3 +57,4 @@ def storeimg(request):
 def index(request):
     cat = category.objects.all()
     return render(request,'index.html',{'cat':cat})
+
