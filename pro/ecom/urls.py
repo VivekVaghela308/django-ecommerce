@@ -2,7 +2,7 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', demo, name='demo'),
+    path('demo/', demo, name='demo'),
     path('first/',first,name='first'),
     path('style/',style,name='style'),
     path('show/',show,name='show'),
@@ -10,6 +10,8 @@ urlpatterns = [
     path('store/',store,name='store'),
     path('storeget/',storeget,name='storeget'),
     path('storeimg/', storeimg,name='storeimg'),
-    path('index/',index,name='index')
+    path('',index,name='index'),
+    path('register/',register,name='register'),
+   # path('master_nav_footer/', master_nav_footer, name=''master_nav_footer),
     
 ]

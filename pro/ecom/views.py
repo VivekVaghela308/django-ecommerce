@@ -58,3 +58,15 @@ def index(request):
     cat = category.objects.all()
     return render(request,'index.html',{'cat':cat})
 
+
+def register(request):
+    if request.method == 'POST':
+        sign_up = Registration(email = request.POST['email'],
+                               name = request.POST['name'], 
+                               mob = request.POST['mob'],
+                               add = request.POST['add'],
+                               password = request.POST['password'])
+        sign_up.save()
+        return render(request,'register.html',{'registration':"Registrations Successfull."})    
+    else:
+        return render(request,'register.html')

@@ -1,3 +1,5 @@
+{% extends "master_nav_footer.html" %}
+{% block content1 %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -22,59 +24,6 @@
     <link rel="stylesheet" href={%static "css/ecom.css"%}/>
   </head> 
   <body>
-
-    
-    <!--====================== Navbar ======================-->
-    <header class="container-fluid navbar-light bg-light">
-      <nav class="navbar container navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="link.html">Link</a>
-            </li>
-          
-            <li class="nav-item">
-              <a class="nav-link" href="orderhistory.html">Order History</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="addproduct.html">
-                <i class="fa-solid fa-plus-square text-dark" aria-hidden="true">
-                  Add product</i
-                >
-              </a>
-            </li>
-            <li class="nav-item">
-              <input
-                class="input-group-text"
-                type="text"
-                placeholder="Search"
-              />
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.html"
-                ><i class="fa fa-cart-shopping text-dark" aria-hidden="true"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
     <!--======================Carousel Section======================-->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -180,46 +129,6 @@
         </div>
       </div>
     </section>
-    <!--======================Footer Section======================-->
-    <footer class="bg-dark text-light py-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h5>Contact Us</h5>
-            <p>Email: vivekvaghela308@gmail.com</p>
-            <p>Phone: 6355492210</p>
-          </div>
-          <div class="col-md-4">
-            <h5>Links</h5>
-            <ul class="list-unstyled">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h5>Follow Us</h5>
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href=""><i class="fab fa-facebook"></i></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <hr />
-        <div class="row">
-          <div class="col text-center">
-            <p>&copy;  E-Commerce Store</p>
-          </div>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>
+{% endblock content1 %}
