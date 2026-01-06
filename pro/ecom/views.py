@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
+
 
 # Create your views here
 
@@ -66,7 +67,26 @@ def register(request):
                                mob = request.POST['mob'],
                                add = request.POST['add'],
                                password = request.POST['password'])
-        sign_up.save()
-        return render(request,'register.html',{'registration':"Registrations Successfull."})    
+        already_reg = Registration.objects.filter(email = request.POST['email'])
+        if already_reg:
+            return render(request,'register.html',{'already':"Email already exictas..."})  
+        else:
+            sign_up.save()
+            return render(request,'register.html',{'registration':"Registrations Successfull."})    
     else:
         return render(request,'register.html')
+
+def login(request):
+    if request.method == 'POST':
+        try:
+            is_present = Registration.objects.get(email = request.POST['email']) #check Reg table data 
+            if is_present:
+                if request.POST['password'] == is_present.password:
+                    # return HttpResponse("login succesfull")
+                    return redirect('index')
+                else:
+                    return render(request,'login.html',{'wrong_pass':"password is incorrect..."})
+        except:
+            return render(request,'login.html',{'not_registered':"this email does not exists..."})
+    else:
+        return render(request,'login.html')

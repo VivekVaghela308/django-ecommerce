@@ -128,3 +128,7 @@ import os # img path use, os is a library
 
 MEDIA_URL = 'media/'
 NEDIA_URL = os.path.join(BASE_DIR,'media/')
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'login'

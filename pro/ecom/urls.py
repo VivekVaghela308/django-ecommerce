@@ -12,6 +12,6 @@ urlpatterns = [
     path('storeimg/', storeimg,name='storeimg'),
     path('',index,name='index'),
     path('register/',register,name='register'),
-   # path('master_nav_footer/', master_nav_footer, name=''master_nav_footer),
+    path('login/',login,name='login'),
     
 ]
