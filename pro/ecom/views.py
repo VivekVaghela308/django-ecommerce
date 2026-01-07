@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import *
 from django.http import HttpResponse
 from .models import *
 
@@ -55,9 +55,6 @@ def storeimg(request):
         store_image.save()
     return render(request,'storeimg.html')
 
-def index(request):
-    cat = category.objects.all()
-    return render(request,'index.html',{'cat':cat})
 
 
 def register(request):
@@ -82,11 +79,25 @@ def login(request):
             is_present = Registration.objects.get(email = request.POST['email']) #check Reg table data 
             if is_present:
                 if request.POST['password'] == is_present.password:
-                    # return HttpResponse("login succesfull")
-                    return redirect('index')
+                   request.session['login'] = is_present.email
+                   return redirect('index')
                 else:
                     return render(request,'login.html',{'wrong_pass':"password is incorrect..."})
         except:
             return render(request,'login.html',{'not_registered':"this email does not exists..."})
     else:
         return render(request,'login.html')
+
+
+
+def index(request):
+    cat = category.objects.all()
+    if 'login' in request.session: #user login is success after to open category
+        return render(request,'index.html',{'cat':cat,'logged_in':True})
+    else:
+        return render(request,'index.html',{'cat':cat})
+
+    
+def logout(request):
+    del request.session['login']
+    return redirect('index')
