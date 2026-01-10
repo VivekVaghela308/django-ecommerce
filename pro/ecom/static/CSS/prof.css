@@ -1,0 +1,134 @@
+/* ---------- Global ---------- */
+body {
+    background: #f4f7fa;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.page-content {
+    margin-top: 60px;
+}
+
+.padding {
+    padding: 20px;
+}
+
+/* ---------- Card ---------- */
+.user-card-full {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    background: #fff;
+}
+
+/* ---------- Left Profile Section ---------- */
+.bg-c-lite-green {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-profile .card-block {
+    padding: 30px 10px;
+}
+
+/* ---------- Profile Image (SMALL SIZE) ---------- */
+.img-radius {
+    width: 80px;          /* 🔥 yaha size control hota hai */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    background: #fff;
+}
+
+/* ---------- Name & Role ---------- */
+.user-profile h6 {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.user-profile p {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* ---------- Right Content ---------- */
+.card-block {
+    padding: 25px;
+}
+
+.card-block h5,
+.card-block h6.f-w-600 {
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card-block p {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.text-muted {
+    font-size: 14px;
+    color: #777;
+}
+
+/* ---------- Update Button ---------- */
+input[type="button"] {
+    margin-top: 15px;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    background: #2193b0;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="button"]:hover {
+    background: #176f86;
+}
+
+/* ---------- Social Icons ---------- */
+.social-link {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link li a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.social-link li a:hover {
+    background: #2193b0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .user-profile {
+        text-align: center;
+    }
+
+    .img-radius {
+        width: 70px;
+        height: 70px;
+    }
+}

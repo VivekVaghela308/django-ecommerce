@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Student , Img , Registration , category
+from .models import *
 
 # Register your models here.
 
@@ -27,3 +27,8 @@ class cat_(admin.ModelAdmin):
     list_display = ['id', 'name','image','discription']
     
 admin.site.register(category,cat_)
+
+class pro_(admin.ModelAdmin):
+    list_display = ['id','name','image','discription','stock','price','category']
+
+admin.site.register(Product,pro_)

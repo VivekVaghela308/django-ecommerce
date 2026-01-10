@@ -37,3 +37,14 @@ class category(models.Model):
     
     def __str__(self):
         return self.name
+    
+class Product(models.Model):
+    name = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='cat_img')
+    discription = models.TextField()
+    stock = models.PositiveBigIntegerField()
+    price = models.PositiveBigIntegerField()
+    category = models.ForeignKey(category,on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name

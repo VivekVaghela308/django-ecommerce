@@ -21,7 +21,7 @@
 
 </head>
 <body>
-        <!--====================== Navbar ======================-->
+    <!--========================== Navbar ==========================-->
     <header class="container-fluid navbar-light bg-light">
       <nav class="navbar container navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">Navbar</a>
@@ -35,18 +35,15 @@
           aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
             {% if logged_in %}
-
             <li class="nav-item">
               <a class="nav-link" href="{% url "logout" %}">Logout </a>
             </li>
-
             {% else %}
             <li class="nav-item">
               <a class="nav-link" href="{% url "register" %}">Sign Up</a>
@@ -79,11 +76,14 @@
         </div>
       </nav>
     </header>
-    
-
+   
     {% block  content1 %} 
     
     {% endblock content1 %}
+
+    {% block content2 %}
+    
+    {% endblock content2 %}
 
         <!--======================Footer Section======================-->
     <footer class="bg-dark text-light py-4">

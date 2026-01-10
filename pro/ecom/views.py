@@ -101,3 +101,24 @@ def index(request):
 def logout(request):
     del request.session['login']
     return redirect('index')
+
+def cat_pro(request,id):
+    pro = Product.objects.filter(category = id)
+    if 'login' in request.session:
+        return render(request,'cat_pro.html',{'pro':pro,'logged_in':True})
+    else:
+        return render(request,'cat_pro.html',{'pro':pro})
+
+def pro_details(request,id):
+    prod = Product.objects.get(pk = id) #pk = primary key
+    if 'login' in request.session:
+        return render(request,'product.html',{'logged_in':True,'product':prod})
+    else:
+        return render(request,'product.html',{'product':prod})
+
+def profile(request):
+    if 'login' in request.session:
+        logged_user = Registration.objects.get(email = request.session['login'])
+        return render(request,'profile.html',{'logged_in':True,'logged_user':logged_user})
+    else:
+        return redirect('login')
